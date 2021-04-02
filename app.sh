@@ -36,15 +36,6 @@ while true; do
     elif [ "$opt" = "3" ] ; then
         start_rstudio throwaway
 
-    elif [ "$opt" = "10" ] ; then
-        start_jupyter tensorflow 2.4.1 
-
-    elif [ "$opt" = "11" ] ; then
-        start_jupyter tensorflow 1.15.5 
-
-    elif [ "$opt" = "12" ] ; then
-        start_rstudio
-
     elif [ "$opt" = "q" ] ; then
         break
 

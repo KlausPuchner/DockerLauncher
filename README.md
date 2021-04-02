@@ -26,3 +26,11 @@ Just start developing instead of having to set up the environment for it! The Do
     - Automatic mount of folder in home drive into docker container for easy data exchange
     - Automatic forwarding of ssh keys into the container for ssh easy key reusage
     - Automatic updates for launcher
+
+## **Requirements**
+- **A computer**
+- **A web browser (ideally Chrome)**
+- **Ubuntu 20.04**
+
+## **Get started**
+Simply start the DockerLauncher by typing `bash launcher.sh` in your terminal.
