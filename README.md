@@ -1,5 +1,5 @@
 # **DockerLauncher**
-Just start developing instead of having to set up the environment for it! The Docker Launcher simplifies the usage of the AI/BI/Data Science development environments Jupyter Notebook Server and RStudio Server. This tool could be compared with Googles Colabs to some extent: It takes away the pain of configuring Deep Learning Backends like Tensorflow and getting them to run properly (especially on GPUs). It also provides automatic installation scripts for the necessary components such as Docker, the Nvidia Container Runtime and Nvidia GPU drivers.
+Just start developing instead of having to set up the environment for it! The Docker Launcher simplifies the usage of the AI/BI/Data Science development environments Jupyter Notebook Server and RStudio Server. This tool could be compared with Googles Colabs to some extent: It takes away the pain of configuring the prerequisites for Deep Learning Frameworks like Tensorflow and getting them to run properly (especially on GPUs). It also provides automatic installation scripts for the necessary components such as Docker, the Nvidia Container Runtime and Nvidia GPU drivers.
 
 ## **Features**
 - **IDEs**
