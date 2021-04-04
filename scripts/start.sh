@@ -39,6 +39,7 @@ function start_tf2_jupyter() {
         -v ~/dockervolume/:/tf/notebooks \
         -v $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
         $imagetag \
+	    /bin/bash -c "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=10000000" \
         | grep --line-buffered '     or http://127.0.0.1' | head -1 \
         | { token=$(sed -u 's/.*\///'); address=$(generate_url $containername); url="${address}/${token}";\
         printf "\e[1m\e[94m ==> \e]8;;$url\e\\Click here to open Jupyter Notebook Server in your Browser\e]8;;\e\\ \e[0m"; }
@@ -53,7 +54,7 @@ function start_tf1_jupyter() {
     if [ "$(detect_gpu)" = "--gpus all" ]; then
         tag_gpu="-gpu-py3"
     else
-        tag_gpu=""
+        tag_gpu="py3"
     fi
 
     # Build image name
@@ -81,6 +82,7 @@ function start_tf1_jupyter() {
         -v ~/dockervolume/:/tf/notebooks \
         -v $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
         $imagetag \
+        /bin/bash -c "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=10000000" \
         | grep --line-buffered '     or http://127.0.0.1' | head -1 \
         | { token=$(sed -u 's/.*\///'); address=$(generate_url $containername); url="${address}/${token}";\
         printf "\e[1m\e[94m ==> \e]8;;$url\e\\Click here to open Jupyter Notebook Server in your Browser\e]8;;\e\\ \e[0m"; }
@@ -124,6 +126,7 @@ function start_rstudio() {
         -v ~/dockervolume/:/home/rstudio \
         -v $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
         $imagetag \
+        /bin/bash -c "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=10000000" \
         | grep '\[services\.d\] done.' | head -1 \
         | { url=$(generate_url $containername); \
         printf "\e[1m\e[94m ==> \e]8;;$url\e\\Click here to open RStudio in your Browser\e]8;;\e\\ \e[0m"; }
