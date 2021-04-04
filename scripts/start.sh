@@ -54,7 +54,7 @@ function start_tf1_jupyter() {
     if [ "$(detect_gpu)" = "--gpus all" ]; then
         tag_gpu="-gpu-py3"
     else
-        tag_gpu="py3"
+        tag_gpu="-py3"
     fi
 
     # Build image name
